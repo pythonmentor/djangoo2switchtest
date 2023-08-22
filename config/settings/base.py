@@ -154,7 +154,7 @@ STATICFILES_STORAGE = (
 STATIC_ROOT = os.getenv("STATIC_ROOT")
 STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.getenv("STATIC_MEDIA")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT")
 MEDIA_URL = "/media/"
 
 
