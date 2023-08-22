@@ -1,0 +1,24 @@
+
+version: "3"
+services:
+    mysql:
+        image: mariadb:10.6.15
+        container_name: testdjango_mysql_db_24306
+        working_dir: /app
+        command: 
+            - '--character-set-server=utf8mb4'
+            - '--collation-server=utf8mb4_unicode_ci'
+            - '--default-authentication-plugin=mysql_native_password'
+        restart: always
+        ports:
+            - "24306:3306"
+        environment:
+            - MYSQL_DATABASE=mydb
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=myuser
+            - MYSQL_PASSWORD=mypass
+        volumes:
+            - "testdjango_mysql_db_24306:/var/lib/mysql"
+           
+volumes:
+    testdjango_mysql_db_24306:
